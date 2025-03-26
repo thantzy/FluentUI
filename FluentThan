@@ -7,7 +7,7 @@ dsc.gg/hydrahub  |   29.01 - well well well removed last update, added "Bloody" 
 
 --- FLUENT PLUS SETTINGS ---
 local Show_Button = false -- Shows the button for toggle fluent ui manually. If "false", works only on mobile, if "true", works everytime.
-local Button_Icon = "rbxassetid://85779221265543" -- Icon of the button for toggle fluent ui
+local Button_Icon = "" -- Icon of the button for toggle fluent ui
 ----------------------------
 
 local Lighting = game:GetService("Lighting")
@@ -6362,9 +6362,9 @@ local MinimizeButton = New("TextButton", {
 		PaddingTop = UDim.new(0, 2),
 	}),
 	New("ImageLabel", {
-		Image = Mobile and Button_Icon or "rbxassetid://85779221265543" or "",
+		Image = Mobile and Button_Icon or "rbxassetid://10734897102" or "",
 		Size = UDim2.new(1, 0, 1, 0),
-		BackgroundTransparency = 0,
+		BackgroundTransparency = 1,
 	}, {
 		New("UIAspectRatioConstraint", {
 			AspectRatio = 1,
@@ -6374,49 +6374,51 @@ local MinimizeButton = New("TextButton", {
 })
 
 local Minimizer
+
 if Mobile then
-    Minimizer = New("Frame", {
-        Parent = GUI,
-        Size = UDim2.new(0.06, 0, 0.15, 0),
-        Position = UDim2.new(0.45, 0, 0.025, 0),
-        BackgroundTransparency = 1,
-        ZIndex = 999999999,
-    },
-    {
-        New("Frame", {
-            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-            Size = UDim2.new(1, 0, 1, 0),
-            BackgroundTransparency = 0.5,
-            BorderSizePixel = 0
-        }, {
-            New("UICorner", {
-                CornerRadius = UDim.new(0.25, 0),
-            }),
-            MinimizeButton
-        })
-    })
+	Minimizer = New("Frame", {
+		Parent = GUI,
+		Size = UDim2.new(0.06, 0, 0.15, 0),
+		Position = UDim2.new(0.45, 0, 0.025, 0),
+		BackgroundTransparency = 1,
+		ZIndex = 999999999,
+	},
+	{
+		New("Frame", {
+			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+			Size = UDim2.new(1, 0, 1, 0),
+			BackgroundTransparency = 0.5,
+			BorderSizePixel = 0
+		}, {
+			New("UICorner", {
+				CornerRadius = UDim.new(0.25, 0),
+			}),
+			MinimizeButton
+		})
+	})
 else
-    Minimizer = New("Frame", {
-        Parent = GUI,
-        Size = UDim2.new(0, 0, 0, 0),
-        Position = UDim2.new(0.45, 0, 0.025, 0),
-        BackgroundTransparency = 1,
-        ZIndex = 999999999,
-    },
-    {
-        New("Frame", {
-            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-            Size = UDim2.new(0, 0, 0, 0),
-            BackgroundTransparency = 0,
-            BorderSizePixel = 0
-        }, {
-            New("UICorner", {
-                CornerRadius = UDim.new(0.25, 0),
-            }),
-            MinimizeButton
-        })
-    })
+	Minimizer = New("Frame", {
+		Parent = GUI,
+		Size = UDim2.new(0, 0, 0, 0),
+		Position = UDim2.new(0.45, 0, 0.025, 0),
+		BackgroundTransparency = 1,
+		ZIndex = 999999999,
+	},
+	{
+		New("Frame", {
+			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+			Size = UDim2.new(0, 0, 0, 0),
+			BackgroundTransparency = 0,
+			BorderSizePixel = 0
+		}, {
+			New("UICorner", {
+				CornerRadius = UDim.new(0.25, 0),
+			}),
+			MinimizeButton
+		})
+	})
 end
+
 Creator.AddSignal(Minimizer.InputBegan, function(Input)
 	if
 		Input.UserInputType == Enum.UserInputType.MouseButton1
