@@ -30,7 +30,7 @@ else
 end
 
 if Show_Button then
-	Mobile = true
+	Mobile = false
 end
 
 local Asset = "rbxassetid://"
