@@ -7,7 +7,7 @@ dsc.gg/hydrahub  |   29.01 - well well well removed last update, added "Bloody" 
 
 --- FLUENT PLUS SETTINGS ---
 local Show_Button = false -- Shows the button for toggle fluent ui manually. If "false", works only on mobile, if "true", works everytime.
-local Button_Icon = "rbxassetid://" -- Icon of the button for toggle fluent ui
+local Button_Icon = "" -- Icon of the button for toggle fluent ui
 ----------------------------
 
 local Lighting = game:GetService("Lighting")
@@ -24,13 +24,13 @@ local UserInputService = game:GetService("UserInputService")
 
 local Mobile
 if RunService:IsStudio() then
-    Mobile = false
+	Mobile = false
 else
-    Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform()) ~= nil
+	Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform()) ~= nil
 end
 
 if Show_Button then
-    Mobile = false
+	Mobile = true
 end
 
 local Asset = "rbxassetid://"
