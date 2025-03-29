@@ -30,10 +30,10 @@ else
 end
 
 if Show_Button then
-	Mobile = false
+	Mobile = true
 end
 
-local Asset = "rbxassetid://"
+local Asset = "rbxassetid://85779221265543"
 if Game.GameId == 5750914919 then
 	Asset = ""
 end
