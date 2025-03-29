@@ -26,7 +26,7 @@ local Mobile
 if RunService:IsStudio() then
     Mobile = false
 else
-    Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android, Enum.Platform.Windows}, UserInputService:GetPlatform()) ~= nil
+    Mobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, UserInputService:GetPlatform()) ~= nil
 end
 
 if Show_Button then
